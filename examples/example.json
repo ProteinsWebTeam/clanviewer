@@ -1,0 +1,37 @@
+{
+  "accession":"CL0050",
+  "id":"HotDog",
+  "members":[
+    { "accession":"PF03061", "id":"4HBT", "num_occurrences":88944, "percentage_hits":34.7 },
+    { "accession":"PF01643", "id":"Acyl-ACP_TE", "num_occurrences":7178, "percentage_hits":2.8 },
+    { "accession":"PF02551", "id":"Acyl_CoA_thio", "num_occurrences":9515, "percentage_hits":3.7 },
+    { "accession":"PF03756", "id":"AfsA", "num_occurrences":565, "percentage_hits":0.2 },
+    { "accession":"PF01575", "id":"MaoC_dehydratas", "num_occurrences":36248, "percentage_hits":14.2 },
+    { "accession":"PF07977", "id":"FabA", "num_occurrences":25739, "percentage_hits":10.1 },
+    { "accession":"PF09500", "id":"YiiD_C", "num_occurrences":3985, "percentage_hits":1.6 },
+    { "accession":"PF10862", "id":"FcoT", "num_occurrences":1695, "percentage_hits":0.7 },
+    { "accession":"PF13279", "id":"4HBT_2", "num_occurrences":24932, "percentage_hits":9.7 },
+    { "accession":"PF13452", "id":"MaoC_dehydrat_N", "num_occurrences":14940, "percentage_hits":5.8 },
+    { "accession":"PF13622", "id":"4HBT_3", "num_occurrences":9133, "percentage_hits":3.6 },
+    { "accession":"PF14539", "id":"DUF4442", "num_occurrences":4869, "percentage_hits":1.9 },
+    { "accession":"PF14765", "id":"PS-DH", "num_occurrences":28241, "percentage_hits":11.0 }
+  ],
+  "interactions":[
+    { "member_id_1":"4HBT", "member_id_2":"Acyl-ACP_TE", "e_value":8.2e-6 },
+    { "member_id_1":"4HBT", "member_id_2":"Acyl_CoA_thio", "e_value":4.8e-3 },
+    { "member_id_1":"4HBT", "member_id_2":"AfsA", "e_value": 4.8e-3 },
+    { "member_id_1":"4HBT", "member_id_2":"MaoC_dehydratas", "e_value":2.2e-4 },
+    { "member_id_1":"4HBT", "member_id_2":"FabA", "e_value":1.1e-3 },
+    { "member_id_1":"4HBT", "member_id_2":"YiiD_C", "e_value": 9.1e-8},
+    { "member_id_1":"4HBT", "member_id_2":"FcoT", "e_value": 7.6e-3},
+    { "member_id_1":"4HBT", "member_id_2":"4HBT_2", "e_value":5.4e-13 },
+    { "member_id_1":"4HBT", "member_id_2":"MaoC_dehydrat_N", "e_value": 1.5e-5},
+    { "member_id_1":"4HBT", "member_id_2":"4HBT_3", "e_value":6.4e-4 },
+    { "member_id_1":"4HBT", "member_id_2":"DUF4442", "e_value":2.2e-8 },
+    { "member_id_1":"4HBT", "member_id_2":"PS-DH", "e_value":1.9e-3 },
+    { "member_id_1":"4HBT_2", "member_id_2":"Acyl-ACP_TE", "e_value": 5e-7},
+    { "member_id_1":"4HBT_3", "member_id_2":"Acyl_CoA_thio", "e_value": 1.1e-3},
+    { "member_id_1":"MaoC_dehydratas", "member_id_2":"MaoC_dehydrat_N", "e_value": 9.2e-9},
+    { "member_id_1":"DUF4442", "member_id_2":"YiiD_C", "e_value": 3e-3}
+  ]
+}
