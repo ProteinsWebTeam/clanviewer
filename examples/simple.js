@@ -2,6 +2,5 @@
 var app = require("clanviewer");
 var instance = new app({el: rootDiv});
 d3.json("example.json", function(error, data) {
-    console.log(instance);
     instance.paint(data);
 });

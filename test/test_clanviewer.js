@@ -21,14 +21,21 @@ chai.should();
 var clanviewer = require('../');
 
 describe('clanviewer module', function(){
-  describe('#hello()', function(){
-    it('should return a hello', function(){
+    describe('#labelArc()', function(){
+        it('should return the translate coordinates', function(){
+            var data = {
+                "target":{"x":8, "y":2},
+                "source":{"x":3, "y":6}
+            };
+            var arc = clanviewer.linkArc(data);
 
-      assert.include(clanviewer.hello('biojs'), ("hello"));
-      assert.include(clanviewer.hello('biojs'), ("biojs"));
+            arc.should.include("M3,6");
+            arc.should.include("A6.4");
+            arc.should.include(",6.40");
 
-      // alternative styles
-      clanviewer.hello('biojs').should.include("hello");
+            var label = clanviewer.labelArc(data);
+            console.log(label);
+            label.should.include("translate(");
+        });
     });
-  });
 });
