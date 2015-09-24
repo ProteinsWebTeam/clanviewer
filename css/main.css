@@ -3,8 +3,14 @@
     stroke: #666;
     stroke-width: 1.5px;
 }
+.link:hover path{
+    stroke: #686;
+}
 .link text{
     fill: #373;
+}
+.link:hover text{
+    font-size: 12px
 }
 .node circle {
     fill: #ccc;
@@ -17,8 +23,11 @@
 }
 text {
     font: 10px sans-serif;
-    pointer-events: none;
     text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+    cursor: default;
+}
+a.href text{
+    cursor: pointer;
 }
 .node:hover text {
     fill: #A33;
