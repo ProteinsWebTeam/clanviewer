@@ -60,7 +60,8 @@ The 'paint' method receives a json object and generates a force-directed layout 
 **Type**: `Object`
 **Example**:
  
-```{
+```
+{
     "accession":"CL0050",
     "id":"HotDog",
     "members":[
@@ -70,7 +71,8 @@ The 'paint' method receives a json object and generates a force-directed layout 
     "interactions":[
       { "member_id_1":"4HBT", "member_id_2":"Acyl-ACP_TE", "e_value":8.2e-6 }
     ]
-}```
+}
+```
 
 How to use this method
 
