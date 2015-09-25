@@ -7,4 +7,3 @@ coverage/lcov.info
 .coveralls.yml
 examples-out
 npm-debug.log*
-selenium-server-standalone-2.47.0.jar
