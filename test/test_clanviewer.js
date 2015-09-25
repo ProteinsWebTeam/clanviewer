@@ -45,7 +45,6 @@ describe('clanviewer module', function(){
             clanviewer.linkArc(data);
 
             var label = clanviewer.labelArc(data);
-            console.log(label);
             label.should.include("translate");
             label.should.include("(4.96");
             label.should.include(",3.33");
