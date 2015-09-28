@@ -22,6 +22,22 @@ var clanviewer = require('../');
 var d3 = require("d3");
 
 describe('clanviewer module', function(){
+    describe('constructor()', function(){
+        it('should initialise the options', function(){
+            var options = {
+                "el":"div.class",
+                "width":100,
+                "height":200,
+                "r":10
+            };
+            var obj =  new clanviewer(options);
+
+            obj.element.should.equal(options.el);
+            obj.width.should.equal(options.width);
+            obj.height.should.equal(options.height);
+            obj.r.should.equal(options.r);
+        });
+    });
     describe('#linkArc()', function(){
         it('should return the path for an arc', function(){
             var data = {
