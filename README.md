@@ -2,6 +2,7 @@
 
 [![NPM version](http://img.shields.io/npm/v/clanviewer.svg)](https://www.npmjs.org/package/clanviewer) 
 [![Build Status](https://secure.travis-ci.org/4ndr01d3/clanviewer.png?branch=master)](http://travis-ci.org/4ndr01d3/clanviewer) 
+[![Coverage Status](https://coveralls.io/repos/4ndr01d3/clanviewer/badge.svg?branch=master&service=github)](https://coveralls.io/github/4ndr01d3/clanviewer?branch=master)
 
 > A component to visualise the relationships between the Pfam families in a clan
 
