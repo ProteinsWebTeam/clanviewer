@@ -8,3 +8,5 @@ before_script:
   - "java -jar selenium-server-standalone-2.47.0.jar > /dev/null &"
   - "npm run w > /dev/null &"
   - sleep 5
+after_success:
+  - npm run coveralls
