@@ -27,7 +27,7 @@ describe('my webdriverio tests', function(){
 
         client
             .url('http://localhost:9090/examples/simple')
-            .waitForVisible('#node_'+parsedJSON.members[0].id+" text",2500)
+            .waitForVisible('#node_'+parsedJSON.members[0].pfama_acc+" text",2500)
             .elements('.link path', function(err, elements) {
                 assert.equal(elements.value.length,parsedJSON.interactions.length,
                     "number of paths should correspond to the number of interactions");

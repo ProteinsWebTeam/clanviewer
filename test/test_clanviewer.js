@@ -25,11 +25,11 @@ var clanviewer = require('../');
 
 var dataJson = {
     "members":[
-        { "accession":"f1", "id":"id1", "num_occurrences":1},
-        { "accession":"f2", "id":"id2", "num_occurrences":2}
+        { "pfama_acc":"f1", "pfama_id":"id1", "num_occurrences":1},
+        { "pfama_acc":"f2", "pfama_id":"id2", "num_occurrences":2}
     ],
-    "interactions":[
-        { "member_id_1":"id1", "member_id_2":"id2", "e_value":8.2e-6 }
+    "relationships":[
+        { "pfama_acc_1":"f1", "pfama_acc_2":"f2", "evalue":8.2e-6 }
     ]
 };
 
@@ -48,7 +48,6 @@ describe('clanviewer module', function(){
             obj.width.should.equal(options.width);
             obj.height.should.equal(options.height);
             obj.r.should.equal(options.r);
-            console.log("here");
         });
     });
     describe('#linkArc()', function(){
@@ -80,7 +79,7 @@ describe('clanviewer module', function(){
         });
     });
     describe('#processData(data)', function(){
-        it('should create source and target objects in each element of data interactions', function(){
+        it('should create source and target objects in each element of data relationships', function(){
             // processData uses some values that should be initiated in the constructor, but given that we are calling
             // it in a static way, we set up those values here:
             clanviewer.r=5;
@@ -88,8 +87,8 @@ describe('clanviewer module', function(){
             //Calling the function
             clanviewer.processData(dataJson);
 
-            dataJson.interactions[0].source.should.equal(0);
-            dataJson.interactions[0].target.should.equal(1);
+            dataJson.relationships[0].source.should.equal(0);
+            dataJson.relationships[0].target.should.equal(1);
         });
     });
     describe('paint()', function(){
@@ -103,8 +102,8 @@ describe('clanviewer module', function(){
             obj.paint(dataJson);
 
             obj.force.nodes().should.equal(dataJson.members);
-            obj.force.links().should.equal(dataJson.interactions);
-            dataJson.interactions.length.should.equal(d3.select(root).selectAll(".link")[0].length);
+            obj.force.links().should.equal(dataJson.relationships);
+            dataJson.relationships.length.should.equal(d3.select(root).selectAll(".link")[0].length);
             dataJson.members.length.should.equal(d3.select(root).selectAll(".node")[0].length);
         });
     });
