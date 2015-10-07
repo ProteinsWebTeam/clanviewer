@@ -20,6 +20,7 @@ chai.should();
 // requires your main app (specified in index.js)
 var jsdom = require('mocha-jsdom');
 window = jsdom({ QuerySelector : true });
+
 var d3 = require("d3");
 var clanviewer = require('../');
 
@@ -40,7 +41,8 @@ describe('clanviewer module', function(){
                 "el":document.createElement('div'),
                 "width":450,
                 "height":250,
-                "r":10
+                "r":10,
+                "testing":true
             };
             var obj = new clanviewer(options);
 
@@ -92,10 +94,11 @@ describe('clanviewer module', function(){
         });
     });
     describe('paint()', function(){
-        it('should initialise the options', function(){
+        it('should start the painting', function(){
             var root =document.createElement('div'),
                 options = {
-                    "el": root
+                    "el": root,
+                    "testing":true
                 };
             var obj = new clanviewer(options);
 
