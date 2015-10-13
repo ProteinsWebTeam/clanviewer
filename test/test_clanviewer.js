@@ -24,15 +24,6 @@ window = jsdom({ QuerySelector : true });
 var d3 = require("d3");
 var clanviewer = require('../');
 
-var dataJson = {
-    "members":[
-        { "pfama_acc":"f1", "pfama_id":"id1", "num_occurrences":1},
-        { "pfama_acc":"f2", "pfama_id":"id2", "num_occurrences":2}
-    ],
-    "relationships":[
-        { "pfama_acc_1":"f1", "pfama_acc_2":"f2", "evalue":8.2e-6 }
-    ]
-};
 
 describe('clanviewer module', function(){
     describe('constructor()', function(){
@@ -84,6 +75,15 @@ describe('clanviewer module', function(){
         it('should create source and target objects in each element of data relationships', function(){
             // processData uses some values that should be initiated in the constructor, but given that we are calling
             // it in a static way, we set up those values here:
+            var dataJson = {
+                "members":[
+                    { "pfama_acc":"f1", "pfama_id":"id1", "num_occurrences":1},
+                    { "pfama_acc":"f2", "pfama_id":"id2", "num_occurrences":2}
+                ],
+                "relationships":[
+                    { "pfama_acc_1":"f1", "pfama_acc_2":"f2", "evalue":8.2e-6 }
+                ]
+            };
             clanviewer.r=5;
             clanviewer.size = d3.scale.linear();
             //Calling the function
@@ -100,6 +100,15 @@ describe('clanviewer module', function(){
                     "el": root,
                     "testing":true
                 };
+            var dataJson = {
+                "members":[
+                    { "pfama_acc":"f1", "pfama_id":"id1", "num_occurrences":1},
+                    { "pfama_acc":"f2", "pfama_id":"id2", "num_occurrences":2}
+                ],
+                "relationships":[
+                    { "pfama_acc_1":"f1", "pfama_acc_2":"f2", "evalue":8.2e-6 }
+                ]
+            };
             var obj = new clanviewer(options);
 
             obj.paint(dataJson);
