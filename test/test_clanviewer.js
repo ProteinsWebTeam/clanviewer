@@ -89,26 +89,30 @@ describe('clanviewer module', function(){
             //Calling the function
             clanviewer.processData(dataJson);
 
-            dataJson.relationships[0].source.should.equal(0);
-            dataJson.relationships[0].target.should.equal(1);
+            dataJson.links[0].source.should.equal(0);
+            dataJson.links[0].target.should.equal(1);
         });
     });
     describe('paint()', function(){
-        it('should start the painting', function(){
+        var dataJson = {
+            "members":[
+                { "pfama_acc":"f1", "pfama_id":"id1", "num_occurrences":1},
+                { "pfama_acc":"f2", "pfama_id":"id2", "num_occurrences":2}
+            ],
+            "relationships":[
+                { "pfama_acc_1":"f1", "pfama_acc_2":"f2", "evalue":8.2e-6 },
+                { "pfama_acc_1":"f1", "pfama_acc_2":"f2", "evalue":8.2e-7 },
+                { "pfama_acc_1":"f2", "pfama_acc_2":"f1", "evalue":8.2e-5 }
+            ]
+        };
+        it('should paint multiple relationships', function(){
             var root =document.createElement('div'),
                 options = {
                     "el": root,
-                    "testing":true
+                    "testing":true,
+                    "multiple_relationships":true,
+                    "directional":true
                 };
-            var dataJson = {
-                "members":[
-                    { "pfama_acc":"f1", "pfama_id":"id1", "num_occurrences":1},
-                    { "pfama_acc":"f2", "pfama_id":"id2", "num_occurrences":2}
-                ],
-                "relationships":[
-                    { "pfama_acc_1":"f1", "pfama_acc_2":"f2", "evalue":8.2e-6 }
-                ]
-            };
             var obj = new clanviewer(options);
 
             obj.paint(dataJson);
@@ -117,6 +121,23 @@ describe('clanviewer module', function(){
             obj.force.links().should.equal(dataJson.relationships);
             dataJson.relationships.length.should.equal(d3.select(root).selectAll(".link")[0].length);
             dataJson.members.length.should.equal(d3.select(root).selectAll(".node")[0].length);
+            d3.select(root).selectAll("marker")[0].length.should.equal(1)
+        });
+        it('should start a single relationship representing overlapping ones', function(){
+            var root =document.createElement('div'),
+                options = {
+                    "el": root,
+                    "testing":true,
+                };
+            var obj = new clanviewer(options);
+
+            obj.paint(dataJson);
+
+            obj.force.nodes().should.equal(dataJson.members);
+            obj.force.links().should.not.equal(dataJson.relationships);
+            dataJson.relationships.length.should.not.equal(d3.select(root).selectAll(".link")[0].length);
+            dataJson.members.length.should.equal(d3.select(root).selectAll(".node")[0].length);
+            d3.select(root).selectAll("marker")[0].length.should.equal(0)
         });
     });
 });
