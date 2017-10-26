@@ -1,18 +1,18 @@
 {
   "name": "clanviewer",
   "description": "A component to visualise the relationships between the Pfam families in a clan",
-  "version": "0.0.4",
-  "homepage": "https://github.com/4ndr01d3/clanviewer",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ProteinsWebTeam/clanviewer",
   "author": {
     "name": "4ndr01d3",
     "email": "gsalazar@ebi.ac.uk"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/4ndr01d3/clanviewer.git"
+    "url": "git://github.com/ProteinsWebTeam/clanviewer.git"
   },
   "bugs": {
-    "url": "https://github.com/4ndr01d3/clanviewer/issues"
+    "url": "https://github.com/ProteinsWebTeam/clanviewer/issues"
   },
   "licenses": [
     {
@@ -20,51 +20,17 @@
       "url": "https://github.com/4ndr01d3/clanviewer/blob/master/LICENSE"
     }
   ],
-  "main": "lib/index.js",
-  "style": "css/*.css",
   "scripts": {
-    "test": "mocha",
-    "cover": "istanbul cover _mocha",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-    "build": "mkdirp build && browserify -r ./:clanviewer -o build/clanviewer.js",
-    "build-browser": "npm run build",
-    "install": "npm run build && npm run css",
-    "watch": "watchify -r ./:clanviewer -v -o build/clanviewer.js",
-    "w": "prunner \"npm run sniper\" \"npm run watch\" \"npm run watch-css\"",
-    "sniper": "sniper .",
-    "css": "parcelify ./ -c build/bundle.css",
-    "watch-css": "parcelify -w ./ -c build/bundle.css --loglevel verbose"
+    "start": "webpack",
+    "dev": "webpack-dev-server"
   },
   "dependencies": {
-    "d3": "^3.5.6"
+    "d3": "^4.11.0"
   },
   "devDependencies": {
-    "browserify": "6.x",
-    "chai": "1.x",
-    "coveralls": "^2.11.4",
-    "istanbul": "^0.3.21",
-    "jsdom": "^6.5.1",
-    "mkdirp": "^0.5.0",
-    "mocha": "1.x",
-    "mocha-jsdom": "^1.0.0",
-    "mocha-lcov-reporter": "^1.0.0",
-    "parcelify": "0.x",
-    "prunner": "1.x",
-    "sniper": "0.x",
-    "watchify": "^1.0.6",
-    "webdriverio": "^3.2.4"
-  },
-  "sniper": {
-    "js": [
-      "/build/clanviewer.js"
-    ],
-    "css": [
-      "/build/bundle.css"
-    ],
-    "snippets": [
-      "examples"
-    ],
-    "first": "simple"
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   },
   "keywords": [
     "pfam",

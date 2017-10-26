@@ -49,7 +49,7 @@ describe('clanviewer module', function(){
                 "target":{"x":8, "y":2},
                 "source":{"x":3, "y":6}
             };
-            var arc = clanviewer.linkArc(data);
+            var arc = ClanViewer.linkArc(data);
 
             arc.should.include("M3,6");
             arc.should.include("A6.4");
@@ -63,7 +63,7 @@ describe('clanviewer module', function(){
                 "target":{"x":8, "y":2},
                 "source":{"x":3, "y":6}
             };
-            clanviewer.linkArc(data);
+            ClanViewer.linkArc(data);
 
             var label = clanviewer.labelArc(data);
             label.should.include("translate");
