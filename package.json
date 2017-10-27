@@ -24,7 +24,13 @@
     "start": "webpack",
     "dev": "webpack-dev-server",
     "lint": "eslint --ignore-path .gitignore .",
-    "test": "jest"
+    "jest": "jest",
+    "test": "npm run lint && npm run jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
   },
   "dependencies": {
     "d3-drag": "^1.2.1",
@@ -36,6 +42,7 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.9.0",
