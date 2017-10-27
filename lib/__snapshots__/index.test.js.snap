@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#labelArc() should return the translate coordinates 1`] = `"translate(4.964101615137755,3.3301270189221936)"`;
+
+exports[`#linkArc() should return the path for an arc 1`] = `"M3,6A6.4031242374328485,6.4031242374328485 0 0,1 8,2"`;
+
+exports[`#processData(data) should create source and target objects in each element of data relationships 1`] = `
+Object {
+  "links": Array [
+    Object {
+      "score": 0.0000082,
+      "source": "f1",
+      "target": "f2",
+    },
+  ],
+  "members": Array [
+    Object {
+      "num_occurrences": 1,
+      "pfama_acc": "f1",
+      "pfama_id": "id1",
+    },
+    Object {
+      "num_occurrences": 2,
+      "pfama_acc": "f2",
+      "pfama_id": "id2",
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "accession": "f1",
+      "name": "id1",
+      "score": undefined,
+    },
+    Object {
+      "accession": "f2",
+      "name": "id2",
+      "score": undefined,
+    },
+  ],
+  "relationships": Array [
+    Object {
+      "evalue": 0.0000082,
+      "pfama_acc_1": "f1",
+      "pfama_acc_2": "f2",
+    },
+  ],
+}
+`;
+
+exports[`constructor() should initialise the options 1`] = `
+ClanViewer {
+  "directional": false,
+  "drag": [Function],
+  "element": <div>
+    <svg
+      class="clanviewer"
+      height="250"
+      pointer-events="all"
+      width="450"
+    >
+      <g />
+    </svg>
+  </div>,
+  "force": Object {
+    "alpha": [Function],
+    "alphaDecay": [Function],
+    "alphaMin": [Function],
+    "alphaTarget": [Function],
+    "find": [Function],
+    "force": [Function],
+    "nodes": [Function],
+    "on": [Function],
+    "restart": [Function],
+    "stop": [Function],
+    "tick": [Function],
+    "velocityDecay": [Function],
+  },
+  "height": 250,
+  "multiple_relationships": false,
+  "r": 10,
+  "size": [Function],
+  "svg": Selection {
+    "_groups": Array [
+      Array [
+        <g />,
+      ],
+    ],
+    "_parents": Array [
+      null,
+    ],
+  },
+  "tickness": [Function],
+  "width": 450,
+  "zoom": [Function],
+}
+`;
+
+exports[`paint() should paint multiple relationships 1`] = `
+Array [
+  Object {
+    "accession": "f1",
+    "index": 0,
+    "name": "id1",
+    "score": undefined,
+    "vx": 0,
+    "vy": 0,
+  },
+  Object {
+    "accession": "f2",
+    "index": 1,
+    "name": "id2",
+    "score": undefined,
+    "vx": 0,
+    "vy": 0,
+  },
+]
+`;
