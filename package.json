@@ -25,7 +25,8 @@
     "dev": "webpack-dev-server",
     "lint": "eslint --ignore-path .gitignore .",
     "jest": "jest",
-    "test": "npm run lint && npm run jest"
+    "test": "npm run lint && npm run jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "jest": {
     "transform": {
@@ -45,6 +46,7 @@
     "babel-jest": "^21.2.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "coveralls": "^3.0.0",
     "eslint": "^4.9.0",
     "eslint-plugin-jest": "^21.2.0",
     "html-webpack-plugin": "^2.30.1",
