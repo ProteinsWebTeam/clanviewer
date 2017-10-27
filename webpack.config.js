@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -30,10 +31,7 @@ module.exports = (env = { dev: true }) => ({
         } : undefined,
         module: {
             rules: [
-                {
-                    test: /\.css$/,
-                    use: [ 'style-loader', 'css-loader' ]
-                }
+                { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
             ]
         }
     });

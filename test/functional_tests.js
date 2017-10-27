@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 var chai        = require('chai'),
     assert      = chai.assert,
     webdriverio = require('webdriverio');
