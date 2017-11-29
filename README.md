@@ -1,8 +1,8 @@
 # clanViewer
 
 [![NPM version](http://img.shields.io/npm/v/clanviewer.svg)](https://www.npmjs.org/package/clanviewer) 
-[![Build Status](https://secure.travis-ci.org/4ndr01d3/clanviewer.png?branch=master)](http://travis-ci.org/4ndr01d3/clanviewer) 
-[![Coverage Status](https://coveralls.io/repos/4ndr01d3/clanviewer/badge.svg?branch=master&service=github)](https://coveralls.io/github/4ndr01d3/clanviewer?branch=master)
+[![Build Status](https://secure.travis-ci.org/ProteinsWebTeam/clanviewer.png?branch=master)](http://travis-ci.org/ProteinsWebTeam/clanviewer) 
+[![Coverage Status](https://coveralls.io/repos/ProteinsWebTeam/clanviewer/badge.svg?branch=master&service=github)](https://coveralls.io/github/ProteinsWebTeam/clanviewer?branch=master)
 
 > A component to visualise the relationships between the Pfam families in a clan
 
@@ -10,9 +10,12 @@
 Install the module with: `npm install clanviewer`
 
 ```javascript
-var clanviewer = require("clanviewer");
-var instance = new clanviewer({el: rootDiv});
-data = {};
+import ClanViewer from '../lib/index';
+import data from './example.json';
+
+const rootDiv = document.getElementById('container');
+const instance = new ClanViewer({element: rootDiv, directional: true});
+
 instance.paint(data);
 ```
 
@@ -51,7 +54,7 @@ All the options are optional including the option parameter itself.
 How to use this method
 
 ```javascript
-var instance = new clanviewer({el: rootDiv});
+const instance = new ClanViewer({element: rootDiv, directional: true});
 ```
 
 #### .paint(data)
