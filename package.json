@@ -1,7 +1,7 @@
 {
   "name": "clanviewer",
   "description": "A component to visualise the relationships between the Pfam families in a clan",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://github.com/ProteinsWebTeam/clanviewer",
   "author": {
     "name": "4ndr01d3",
@@ -56,6 +56,15 @@
     "jest": "^21.2.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"
+  },
+  "sniper": {
+    "js": [
+      "/build/clanviewer.packed.js"
+    ],
+    "css":["/css/clanviewr.css"],
+    "snippets": ["biojs"],
+    "first": "example"
+
   },
   "keywords": [
     "pfam",

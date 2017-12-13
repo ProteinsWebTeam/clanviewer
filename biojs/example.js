@@ -1,0 +1,49 @@
+var ClanViewer = require("clanviewer");
+var vis = new ClanViewer({ element: yourDiv });
+var data = {
+    "clan_acc":"CL0050",
+    "clan_id":"HotDog",
+    "total_occurrences":255984,
+    "members":[
+        {"pfama_acc":"PF03061","pfama_id":"4HBT","num_full":88944},
+        {"pfama_acc":"PF01643","pfama_id":"Acyl-ACP_TE","num_full":7178},
+        {"pfama_acc":"PF02551","pfama_id":"Acyl_CoA_thio","num_full":9515},
+        {"pfama_acc":"PF03756","pfama_id":"AfsA","num_full":565},
+        {"pfama_acc":"PF01575","pfama_id":"MaoC_dehydratas","num_full":36248},
+        {"pfama_acc":"PF07977","pfama_id":"FabA","num_full":25739},
+        {"pfama_acc":"PF09500","pfama_id":"YiiD_C","num_full":3985},
+        {"pfama_acc":"PF10862","pfama_id":"FcoT","num_full":1695},
+        {"pfama_acc":"PF13279","pfama_id":"4HBT_2","num_full":24932},
+        {"pfama_acc":"PF13452","pfama_id":"MaoC_dehydrat_N","num_full":14940},
+        {"pfama_acc":"PF13622","pfama_id":"4HBT_3","num_full":9133},
+        {"pfama_acc":"PF14539","pfama_id":"DUF4442","num_full":4869},
+        {"pfama_acc":"PF14765","pfama_id":"PS-DH","num_full":28241}
+    ],
+    "relationships":[
+        {"pfama_acc_1":"PF03061","pfama_acc_2":"PF13279","evalue":9.2e-11},
+        {"pfama_acc_1":"PF03061","pfama_acc_2":"PF13622","evalue":1.2e-06},
+        {"pfama_acc_1":"PF03061","pfama_acc_2":"PF09500","evalue":5.5e-06},
+        {"pfama_acc_1":"PF03061","pfama_acc_2":"PF14539","evalue":1.4e-05},
+        {"pfama_acc_1":"PF03061","pfama_acc_2":"PF01643","evalue":0.00063},
+        {"pfama_acc_1":"PF03061","pfama_acc_2":"PF01643","evalue":0.0015},
+        {"pfama_acc_1":"PF01643","pfama_acc_2":"PF13279","evalue":2.8e-09},
+        {"pfama_acc_1":"PF01643","pfama_acc_2":"PF13279","evalue":5.1e-09},
+        {"pfama_acc_1":"PF01643","pfama_acc_2":"PF03061","evalue":0.00061},
+        {"pfama_acc_1":"PF01643","pfama_acc_2":"PF03061","evalue":0.0047},
+        {"pfama_acc_1":"PF02551","pfama_acc_2":"PF13622","evalue":1.1e-05},
+        {"pfama_acc_1":"PF02551","pfama_acc_2":"PF13622","evalue":0.0073},
+        {"pfama_acc_1":"PF01575","pfama_acc_2":"PF13452","evalue":8.3e-09},
+        {"pfama_acc_1":"PF09500","pfama_acc_2":"PF03061","evalue":4.8e-05},
+        {"pfama_acc_1":"PF09500","pfama_acc_2":"PF14539","evalue":9.7e-05},
+        {"pfama_acc_1":"PF13279","pfama_acc_2":"PF03061","evalue":9.3e-11},
+        {"pfama_acc_1":"PF13279","pfama_acc_2":"PF01643","evalue":1.4e-10},
+        {"pfama_acc_1":"PF13279","pfama_acc_2":"PF01643","evalue":6.2e-10},
+        {"pfama_acc_1":"PF13452","pfama_acc_2":"PF01575","evalue":3.2e-09},
+        {"pfama_acc_1":"PF13622","pfama_acc_2":"PF02551","evalue":5.9e-06},
+        {"pfama_acc_1":"PF13622","pfama_acc_2":"PF03061","evalue":1.1e-05},
+        {"pfama_acc_1":"PF13622","pfama_acc_2":"PF02551","evalue":0.0069},
+        {"pfama_acc_1":"PF14539","pfama_acc_2":"PF09500","evalue":0.0001},
+        {"pfama_acc_1":"PF14539","pfama_acc_2":"PF03061","evalue":0.00015}
+    ]
+};
+vis.paint(data, false);
