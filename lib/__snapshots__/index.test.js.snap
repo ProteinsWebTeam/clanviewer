@@ -29,12 +29,12 @@ Object {
     Object {
       "accession": "f1",
       "name": "id1",
-      "score": undefined,
+      "score": NaN,
     },
     Object {
       "accession": "f2",
       "name": "id2",
-      "score": undefined,
+      "score": NaN,
     },
   ],
   "relationships": Array [
@@ -101,7 +101,7 @@ Array [
     "accession": "f1",
     "index": 0,
     "name": "id1",
-    "score": undefined,
+    "score": NaN,
     "vx": 0,
     "vy": 0,
   },
@@ -109,7 +109,7 @@ Array [
     "accession": "f2",
     "index": 1,
     "name": "id2",
-    "score": undefined,
+    "score": NaN,
     "vx": 0,
     "vy": 0,
   },
