@@ -8,3 +8,4 @@ coverage/lcov.info
 examples-out
 npm-debug.log*
 clanViewer.iml
+coverage/
