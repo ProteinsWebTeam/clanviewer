@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env = { dev: true }) => ({
+        mode: env.dev ? 'development' : 'production',
         entry: env.dev
             ? path.resolve(__dirname, 'examples', 'index.js')
             : path.resolve(__dirname, 'lib', 'index.js'),
