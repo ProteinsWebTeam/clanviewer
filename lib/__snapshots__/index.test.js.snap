@@ -49,6 +49,8 @@ Object {
 
 exports[`constructor() should initialise the options 1`] = `
 ClanViewer {
+  "_autoHeight": false,
+  "_autoWidth": false,
   "directional": false,
   "drag": [Function],
   "element": <div>
@@ -76,13 +78,30 @@ ClanViewer {
     "velocityDecay": [Function],
   },
   "height": 250,
+  "maingroup": Selection {
+    "_groups": Array [
+      Array [
+        <g />,
+      ],
+    ],
+    "_parents": Array [
+      null,
+    ],
+  },
   "multiple_relationships": false,
   "r": 10,
   "size": [Function],
   "svg": Selection {
     "_groups": Array [
       Array [
-        <g />,
+        <svg
+          class="clanviewer"
+          height="250"
+          pointer-events="all"
+          width="450"
+        >
+          <g />
+        </svg>,
       ],
     ],
     "_parents": Array [
