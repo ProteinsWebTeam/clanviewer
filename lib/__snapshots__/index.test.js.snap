@@ -60,7 +60,14 @@ ClanViewer {
       pointer-events="all"
       width="450"
     >
-      <g />
+      <g>
+        <g
+          class="links"
+        />
+        <g
+          class="nodes"
+        />
+      </g>
     </svg>
   </div>,
   "force": Object {
@@ -78,10 +85,29 @@ ClanViewer {
     "velocityDecay": [Function],
   },
   "height": 250,
+  "linksgroup": Selection {
+    "_groups": Array [
+      Array [
+        <g
+          class="links"
+        />,
+      ],
+    ],
+    "_parents": Array [
+      null,
+    ],
+  },
   "maingroup": Selection {
     "_groups": Array [
       Array [
-        <g />,
+        <g>
+          <g
+            class="links"
+          />
+          <g
+            class="nodes"
+          />
+        </g>,
       ],
     ],
     "_parents": Array [
@@ -89,6 +115,18 @@ ClanViewer {
     ],
   },
   "multiple_relationships": false,
+  "nodeGroup": Selection {
+    "_groups": Array [
+      Array [
+        <g
+          class="nodes"
+        />,
+      ],
+    ],
+    "_parents": Array [
+      null,
+    ],
+  },
   "r": 10,
   "size": [Function],
   "svg": Selection {
@@ -100,7 +138,14 @@ ClanViewer {
           pointer-events="all"
           width="450"
         >
-          <g />
+          <g>
+            <g
+              class="links"
+            />
+            <g
+              class="nodes"
+            />
+          </g>
         </svg>,
       ],
     ],
