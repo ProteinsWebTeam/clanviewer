@@ -154,6 +154,7 @@ ClanViewer {
     ],
   },
   "tickness": [Function],
+  "useCtrlToZoom": false,
   "width": 450,
   "zoom": [Function],
 }
