@@ -79,6 +79,7 @@ ClanViewer {
     "force": [Function],
     "nodes": [Function],
     "on": [Function],
+    "randomSource": [Function],
     "restart": [Function],
     "stop": [Function],
     "tick": [Function],
