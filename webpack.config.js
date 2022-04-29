@@ -2,6 +2,8 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = (env = { dev: true }) => ({
   mode: env.dev ? "development" : "production",
@@ -18,6 +20,7 @@ module.exports = (env = { dev: true }) => ({
           template: "examples/index.template.html",
         })
       : null,
+    new MiniCssExtractPlugin(),
   ].filter(Boolean),
   devtool: env.dev ? "inline-source-map" : "source-map",
   devServer: env.dev
@@ -35,8 +38,14 @@ module.exports = (env = { dev: true }) => ({
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: [
+          env.dev ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+        ],
       },
     ],
+  },
+  optimization: {
+    minimizer: [new CssMinimizerPlugin()],
   },
 });
