@@ -1,10 +1,10 @@
 {
   "name": "clanviewer",
   "description": "A component to visualise the relationships between the Pfam families in a clan",
-  "version": "0.2.5",
+  "version": "1.0.0",
   "homepage": "https://github.com/ProteinsWebTeam/clanviewer",
   "author": {
-    "name": "4ndr01d3",
+    "name": "gustavo-salazar",
     "email": "gsalazar@ebi.ac.uk"
   },
   "repository": {
@@ -38,18 +38,16 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "d3-drag": "1.2.5",
-    "d3-force": "2.1.1",
-    "d3-scale": "3.2.3",
-    "d3-selection": "1.4.1",
-    "d3-zoom": "1.8.3",
-    "resize-observer-polyfill": "1.5.1"
+    "d3-drag": "3.0.0",
+    "d3-force": "3.0.0",
+    "d3-scale": "4.0.2",
+    "d3-selection": "3.0.0",
+    "d3-zoom": "3.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.17.9",
     "@babel/eslint-parser": "^7.17.0",
     "@babel/preset-env": "7.16.11",
-    "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "28.0.3",
     "babel-loader": "8.2.5",
     "coveralls": "3.1.1",
@@ -60,27 +58,14 @@
     "jest": "28.0.3",
     "jest-environment-jsdom": "28.0.2",
     "style-loader": "^3.3.1",
-    "webpack": "^5.72.0",
+    "webpack": "5.72.0",
     "webpack-cli": "4.9.2",
     "webpack-dev-server": "4.8.1"
-  },
-  "sniper": {
-    "js": [
-      "https://cdn.jsdelivr.net/npm/clanviewer@latest/build/clanviewer.packed.js"
-    ],
-    "css": [
-      "/css/clanviewr.css"
-    ],
-    "snippets": [
-      "biojs"
-    ],
-    "first": "example"
   },
   "keywords": [
     "pfam",
     "protein families",
     "clans",
-    "d3",
-    "biojs"
+    "d3"
   ]
 }
