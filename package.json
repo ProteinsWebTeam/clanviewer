@@ -35,6 +35,9 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!d3-selection|d3-scale|d3-zoom|d3-drag|d3-force|internmap|delaunator|robust-predicates)"
+    ],
     "testEnvironment": "jsdom"
   },
   "dependencies": {
