@@ -6,35 +6,18 @@ exports[`#linkArc() should return the path for an arc 1`] = `"M3,6A6.40312423743
 
 exports[`#processData(data) should create source and target objects in each element of data relationships 1`] = `
 Object {
-  "links": Array [
-    Object {
-      "score": 0.0000082,
-      "source": "f1",
-      "target": "f2",
-    },
-  ],
+  "clan_acc": "CLtest",
+  "clan_id": "001",
   "members": Array [
     Object {
-      "num_occurrences": 1,
+      "num_full": 1,
       "pfama_acc": "f1",
       "pfama_id": "id1",
     },
     Object {
-      "num_occurrences": 2,
+      "num_full": 2,
       "pfama_acc": "f2",
       "pfama_id": "id2",
-    },
-  ],
-  "nodes": Array [
-    Object {
-      "accession": "f1",
-      "name": "id1",
-      "score": NaN,
-    },
-    Object {
-      "accession": "f2",
-      "name": "id2",
-      "score": NaN,
     },
   ],
   "relationships": Array [
@@ -44,6 +27,7 @@ Object {
       "pfama_acc_2": "f2",
     },
   ],
+  "total_occurrences": 2,
 }
 `;
 
@@ -56,9 +40,9 @@ ClanViewer {
   "element": <div>
     <svg
       class="clanviewer"
-      height="250"
+      height="500"
       pointer-events="all"
-      width="450"
+      width="500"
     >
       <g>
         <g
@@ -85,8 +69,8 @@ ClanViewer {
     "tick": [Function],
     "velocityDecay": [Function],
   },
-  "height": 250,
-  "linksgroup": Selection {
+  "height": 500,
+  "linksgroup": Selection$1 {
     "_groups": Array [
       Array [
         <g
@@ -98,7 +82,7 @@ ClanViewer {
       null,
     ],
   },
-  "maingroup": Selection {
+  "maingroup": Selection$1 {
     "_groups": Array [
       Array [
         <g>
@@ -116,7 +100,7 @@ ClanViewer {
     ],
   },
   "multiple_relationships": false,
-  "nodeGroup": Selection {
+  "nodeGroup": Selection$1 {
     "_groups": Array [
       Array [
         <g
@@ -130,14 +114,14 @@ ClanViewer {
   },
   "r": 10,
   "size": [Function],
-  "svg": Selection {
+  "svg": Selection$1 {
     "_groups": Array [
       Array [
         <svg
           class="clanviewer"
-          height="250"
+          height="500"
           pointer-events="all"
-          width="450"
+          width="500"
         >
           <g>
             <g
@@ -154,9 +138,10 @@ ClanViewer {
       null,
     ],
   },
+  "tick": undefined,
   "tickness": [Function],
   "useCtrlToZoom": false,
-  "width": 450,
+  "width": 500,
   "zoom": [Function],
 }
 `;
@@ -165,17 +150,19 @@ exports[`paint() should paint multiple relationships 1`] = `
 Array [
   Object {
     "accession": "f1",
+    "id": "f1",
     "index": 0,
     "name": "id1",
-    "score": NaN,
+    "score": 1,
     "vx": 0,
     "vy": 0,
   },
   Object {
     "accession": "f2",
+    "id": "f2",
     "index": 1,
     "name": "id2",
-    "score": NaN,
+    "score": 2,
     "vx": 0,
     "vy": 0,
   },

@@ -1,20 +1,20 @@
 /* eslint-env node */
 module.exports = {
+  root: true,
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint", "jest"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+  ],
+
   env: {
     browser: true,
-    es6: true,
+    // es6: true,
     "jest/globals": true,
   },
-  parser: "@babel/eslint-parser",
-  extends: ["eslint:recommended", "plugin:jest/recommended"],
-  parserOptions: {
-    ecmaVersion: 2017,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
-      modules: true,
-    },
-  },
+
   rules: {
     "no-empty": ["error", { allowEmptyCatch: true }],
     "jest/no-disabled-tests": "warn",
@@ -22,5 +22,4 @@ module.exports = {
     "jest/no-identical-title": "error",
     "jest/valid-expect": "error",
   },
-  plugins: ["jest"],
 };

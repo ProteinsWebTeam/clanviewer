@@ -89,8 +89,8 @@ export default class ClanViewer {
     ClanSimulationNode,
     SimulationLinkDatum<ClanSimulationNode>
   >;
-  zoom: ZoomBehavior<Element, unknown>;
-  drag: DragBehavior<Element, unknown, unknown>;
+  zoom: ZoomBehavior<SVGSVGElement, unknown>;
+  drag: DragBehavior<SVGCircleElement, ClanNode, unknown>;
   svg: Selection<SVGSVGElement, unknown, null, undefined>;
   maingroup: Selection<SVGGElement, unknown, null, undefined>;
   linksgroup: Selection<SVGGElement, unknown, null, undefined>;
@@ -108,7 +108,7 @@ export default class ClanViewer {
     useCtrlToZoom = false,
   }: {
     element: string | HTMLElement;
-    directional: boolean;
+    directional?: boolean;
     width?: number;
     height?: number;
     r?: number;
@@ -149,7 +149,7 @@ export default class ClanViewer {
       )
       .force("center", forceCenter(width || 0 / 2, height || 0 / 2));
 
-    this.zoom = d3Zoom()
+    this.zoom = d3Zoom<SVGSVGElement, unknown>()
       .filter((event) => {
         if (!(event instanceof WheelEvent)) return true;
         return !this.useCtrlToZoom || event.ctrlKey;
@@ -159,7 +159,7 @@ export default class ClanViewer {
         this.maingroup.attr("transform", event.transform);
       });
 
-    this.drag = d3Drag()
+    this.drag = d3Drag<SVGCircleElement, ClanNode>()
       .on("start", (event, node) => {
         const d = node as ClanSimulationNode;
         event.sourceEvent.stopPropagation();
@@ -177,10 +177,7 @@ export default class ClanViewer {
         if (!event.active) this.force.alphaTarget(0);
       });
 
-    this.svg
-      // @ts-ignore
-      .call(this.zoom)
-      .on("dblclick.zoom", null);
+    this.svg.call(this.zoom).on("dblclick.zoom", null);
 
     if (this.directional)
       this.maingroup
@@ -283,7 +280,6 @@ export default class ClanViewer {
     const node = nodeG
       .append("circle")
       .attr("r", (d) => this.size(d.score))
-      // @ts-ignore
       .call(this.drag)
       .on("dblclick", function (d) {
         d.fx = null;

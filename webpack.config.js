@@ -13,6 +13,7 @@ module.exports = (env = { dev: true }) => ({
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "clanviewer.packed.js",
+    clean: true,
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -38,11 +39,6 @@ module.exports = (env = { dev: true }) => ({
         test: /\.tsx?$/,
         use: "ts-loader",
         exclude: /node_modules/,
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "babel-loader",
       },
       {
         test: /\.css$/i,

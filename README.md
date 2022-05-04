@@ -1,20 +1,21 @@
 # clanViewer
 
-[![NPM version](http://img.shields.io/npm/v/clanviewer.svg)](https://www.npmjs.org/package/clanviewer) 
-[![Build Status](https://secure.travis-ci.org/ProteinsWebTeam/clanviewer.png?branch=master)](http://travis-ci.org/ProteinsWebTeam/clanviewer) 
+[![NPM version](http://img.shields.io/npm/v/clanviewer.svg)](https://www.npmjs.org/package/clanviewer)
+[![Test Build](https://github.com/ProteinsWebTeam/clanviewer/actions/workflows/test_build.yml/badge.svg)](https://github.com/ProteinsWebTeam/clanviewer/actions/workflows/test_build.yml)
 [![Coverage Status](https://coveralls.io/repos/ProteinsWebTeam/clanviewer/badge.svg?branch=master&service=github)](https://coveralls.io/github/ProteinsWebTeam/clanviewer?branch=master)
 
-> A component to visualise the relationships between the Pfam families in a clan
+> A component to visualise the relationships between the Pfam families in a clan. Now in TypeScript!
 
 ## Getting Started
+
 Install the module with: `npm install clanviewer`
 
 ```javascript
-import ClanViewer from '../lib/index';
-import data from './example.json';
+import ClanViewer from "../lib/index";
+import data from "./example.json";
 
-const rootDiv = document.getElementById('container');
-const instance = new ClanViewer({element: rootDiv, directional: true});
+const rootDiv = document.getElementById("container");
+const instance = new ClanViewer({ element: rootDiv, directional: true });
 
 instance.paint(data);
 ```
@@ -22,10 +23,11 @@ instance.paint(data);
 ## Documentation
 
 #### constructor(options)
+
 The 'constructor' method is responsible for capturing the parameters and setting up the space.
 
 All the options are optional including the option parameter itself.
- 
+
 **Parameter**: `options`
 **Type**: `Object`
 **Default**: `{}`
@@ -54,16 +56,17 @@ All the options are optional including the option parameter itself.
 How to use this method
 
 ```javascript
-const instance = new ClanViewer({element: rootDiv, directional: true});
+const instance = new ClanViewer({ element: rootDiv, directional: true });
 ```
 
 #### .paint(data)
+
 The 'paint' method receives a json object and generates a force-directed layout that maps the memebers with ith interactions.
 
 **Parameter**: `data`
 **Type**: `Object`
 **Example**:
- 
+
 ```
 {
     "accession":"CL0050",
@@ -92,7 +95,8 @@ All contributions are welcome.
 
 If you have any problem or suggestion please open an issue [here](https://github.com/4ndr01d3/clanviewer/issues).
 
-## License 
+## License
+
 This software is licensed under the Apache 2 license, quoted below.
 
 Copyright (c) 2015, gsalazar

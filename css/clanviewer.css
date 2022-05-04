@@ -1,41 +1,41 @@
-.clanviewer .link path{
-    fill: none;
-    stroke: #666;
-    stroke-width: 1.5px;
-    opacity: 0.9;
+.clanviewer .link path {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+  opacity: 0.9;
 }
-.clanviewer .link:hover path{
-    stroke: #686;
+.clanviewer .link:hover path {
+  stroke: #686;
 }
-.clanviewer .link text{
-    fill: #373;
+.clanviewer .link text {
+  fill: #373;
 }
-.clanviewer .link:hover text{
-    font-size: 12px
+.clanviewer .link:hover text {
+  font-size: 12px;
 }
 .clanviewer .node circle {
-    fill: #ccc;
-    stroke: #333;
-    stroke-width: 1.5px;
-    opacity: 0.9;
+  fill: #ccc;
+  stroke: #333;
+  stroke-width: 1.5px;
+  opacity: 0.9;
 }
 .clanviewer .node:hover circle {
-    stroke: #A33;
-    fill: #dcc;
+  stroke: #a33;
+  fill: #dcc;
 }
 .clanviewer text {
-    font: 10px sans-serif;
-    text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
-    cursor: default;
+  font: 10px sans-serif;
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+  cursor: default;
 }
-.clanviewer a.href text{
-    cursor: pointer;
+.clanviewer a.href text {
+  cursor: pointer;
 }
 .clanviewer .node:hover text {
-    fill: #A33;
+  fill: #33a;
 }
 
 #arrowhead {
-    fill: black;
-    stroke: black;
+  fill: black;
+  stroke: black;
 }
