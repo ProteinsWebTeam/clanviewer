@@ -1,0 +1,151 @@
+{
+  "nodes": [
+    {
+      "accession": "PF03756",
+      "type": "entry",
+      "score": 0.009984046111883074
+    },
+    {
+      "accession": "PF19315",
+      "type": "entry",
+      "score": 0.00024996875390576176
+    },
+    {
+      "accession": "PF13452",
+      "type": "entry",
+      "score": 0.049133564186829584
+    },
+    {
+      "accession": "PF13622",
+      "type": "entry",
+      "score": 0.07571112434475102
+    },
+    {
+      "accession": "PF14765",
+      "type": "entry",
+      "score": 0.1328289846122176
+    },
+    {
+      "accession": "PF13279",
+      "type": "entry",
+      "score": 0.08512171272708559
+    },
+    {
+      "accession": "PF14539",
+      "type": "entry",
+      "score": 0.020490085798098766
+    },
+    {
+      "accession": "PF07977",
+      "type": "entry",
+      "score": 0.07829168412771934
+    },
+    {
+      "accession": "PF01643",
+      "type": "entry",
+      "score": 0.027320114397465022
+    },
+    {
+      "accession": "PF09500",
+      "type": "entry",
+      "score": 0.005462552475058265
+    },
+    {
+      "accession": "PF10862",
+      "type": "entry",
+      "score": 0.0007940183947594786
+    },
+    {
+      "accession": "PF02551",
+      "type": "entry",
+      "score": 0.0009337068160597573
+    },
+    {
+      "accession": "PF03061",
+      "type": "entry",
+      "score": 0.34234691251828814
+    },
+    {
+      "accession": "PF01575",
+      "type": "entry",
+      "score": 0.1713315247358786
+    }
+  ],
+  "links": [
+    {
+      "source": "PF01575",
+      "target": "PF13452",
+      "score": 9.6e-10
+    },
+    {
+      "source": "PF01575",
+      "target": "PF19315",
+      "score": 1.2e-09
+    },
+    {
+      "source": "PF01575",
+      "target": "PF07977",
+      "score": 0.0018
+    },
+    {
+      "source": "PF01575",
+      "target": "PF03061",
+      "score": 0.00021
+    },
+    {
+      "source": "PF09500",
+      "target": "PF14539",
+      "score": 0.0013
+    },
+    {
+      "source": "PF03061",
+      "target": "PF09500",
+      "score": 0.0014
+    },
+    {
+      "source": "PF03061",
+      "target": "PF13622",
+      "score": 3.3e-09
+    },
+    {
+      "source": "PF03061",
+      "target": "PF13279",
+      "score": 1.5e-14
+    },
+    {
+      "source": "PF03061",
+      "target": "PF13452",
+      "score": 0.003
+    },
+    {
+      "source": "PF03061",
+      "target": "PF14765",
+      "score": 0.0034
+    },
+    {
+      "source": "PF03061",
+      "target": "PF14539",
+      "score": 0.0017
+    },
+    {
+      "source": "PF02551",
+      "target": "PF13622",
+      "score": 1.4e-20
+    },
+    {
+      "source": "PF01643",
+      "target": "PF03061",
+      "score": 0.0049
+    },
+    {
+      "source": "PF01643",
+      "target": "PF13279",
+      "score": 1.1e-08
+    },
+    {
+      "source": "PF13452",
+      "target": "PF19315",
+      "score": 6.1e-05
+    }
+  ]
+}

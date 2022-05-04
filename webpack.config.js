@@ -8,11 +8,14 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = (env = { dev: true }) => ({
   mode: env.dev ? "development" : "production",
   entry: env.dev
-    ? path.resolve(__dirname, "examples", "index.js")
-    : path.resolve(__dirname, "lib", "index.js"),
+    ? path.resolve(__dirname, "examples", "index.ts")
+    : path.resolve(__dirname, "lib", "index.ts"),
   output: {
     path: path.resolve(__dirname, "build"),
     filename: "clanviewer.packed.js",
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
     env.dev
@@ -31,6 +34,11 @@ module.exports = (env = { dev: true }) => ({
     : undefined,
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
