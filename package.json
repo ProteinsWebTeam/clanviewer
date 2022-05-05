@@ -20,8 +20,8 @@
       "url": "https://github.com/ProteinsWebTeam/clanviewer/blob/master/LICENSE"
     }
   ],
-  "module": "lib/index.js",
-  "jsnext:main": "lib/index.js",
+  "module": "lib/index.ts",
+  "jsnext:main": "lib/index.ts",
   "main": "build/clanviewer.packed.js",
   "types": "build/lib/index.d.ts",
   "scripts": {
