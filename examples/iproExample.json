@@ -2,71 +2,85 @@
   "nodes": [
     {
       "accession": "PF03756",
+      "name": "Name for PF03756",
       "type": "entry",
       "score": 0.009984046111883074
     },
     {
       "accession": "PF19315",
+      "name": "Name for PF19315",
       "type": "entry",
       "score": 0.00024996875390576176
     },
     {
       "accession": "PF13452",
+      "name": "Name for PF13452",
       "type": "entry",
       "score": 0.049133564186829584
     },
     {
       "accession": "PF13622",
+      "name": "Name for PF13622",
       "type": "entry",
       "score": 0.07571112434475102
     },
     {
       "accession": "PF14765",
+      "name": "Name for PF14765",
       "type": "entry",
       "score": 0.1328289846122176
     },
     {
       "accession": "PF13279",
+      "name": "Name for PF13279",
       "type": "entry",
       "score": 0.08512171272708559
     },
     {
       "accession": "PF14539",
+      "name": "Name for PF14539",
       "type": "entry",
       "score": 0.020490085798098766
     },
     {
       "accession": "PF07977",
+      "name": "Name for PF07977",
       "type": "entry",
       "score": 0.07829168412771934
     },
     {
       "accession": "PF01643",
+      "name": "Name for PF01643",
       "type": "entry",
       "score": 0.027320114397465022
     },
     {
       "accession": "PF09500",
+      "name": "Name for PF09500",
       "type": "entry",
       "score": 0.005462552475058265
     },
     {
       "accession": "PF10862",
+      "name": "Name for PF10862",
       "type": "entry",
       "score": 0.0007940183947594786
     },
     {
       "accession": "PF02551",
+      "name": "Name for PF02551",
       "type": "entry",
       "score": 0.0009337068160597573
     },
     {
       "accession": "PF03061",
+      "name": "Name for PF03061",
       "type": "entry",
       "score": 0.34234691251828814
     },
     {
       "accession": "PF01575",
+      "name": "Name for PF01575",
       "type": "entry",
       "score": 0.1713315247358786
     }

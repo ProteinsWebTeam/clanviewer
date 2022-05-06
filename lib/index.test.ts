@@ -2,7 +2,7 @@ import ClanViewer from "./index";
 
 import * as d3 from "d3-selection";
 
-const minData = {
+const minDataLink = {
   target: { x: 8, y: 2, accession: "a" },
   source: { x: 3, y: 6, accession: "b" },
   score: 0.5,
@@ -40,7 +40,7 @@ describe("constructor()", () => {
 
 describe("#linkArc()", () => {
   it("should return the path for an arc", () => {
-    const arc = ClanViewer.linkArc(minData);
+    const arc = ClanViewer.linkArc(minDataLink);
 
     expect(arc).toMatchSnapshot();
   });
@@ -48,8 +48,8 @@ describe("#linkArc()", () => {
 
 describe("#labelArc()", () => {
   it("should return the translate coordinates", () => {
-    ClanViewer.linkArc(minData);
-    const label = ClanViewer.labelArc(minData);
+    ClanViewer.linkArc(minDataLink);
+    const label = ClanViewer.labelArc(minDataLink);
     expect(label).toMatchSnapshot();
   });
 });
@@ -111,5 +111,40 @@ describe("paint()", () => {
       d3.select(root).selectAll(".node").size()
     );
     expect(d3.select(root).selectAll("marker").size()).toBe(1);
+  });
+
+  it("should update the labels", function () {
+    const root = document.createElement("div"),
+      options = {
+        element: root,
+        testing: true,
+        multiple_relationships: true,
+        directional: true,
+      };
+    const obj = new ClanViewer(options);
+
+    obj.paint(dataWithMembers);
+    expect(dataWithMembers.members).toHaveLength(
+      d3.select(root).selectAll(".node").size()
+    );
+    d3.select(root)
+      .selectAll(".node text")
+      .call((x) => {
+        expect(
+          dataWithMembers.members.map(({ pfama_acc }) => pfama_acc)
+        ).toContainEqual(x.text());
+      });
+    obj.updateNodeLabel("name");
+    d3.select(root)
+      .selectAll(".node text")
+      .call((x) => {
+        expect(
+          dataWithMembers.members.map(({ pfama_acc }) => pfama_acc)
+        ).not.toContainEqual(x.text());
+
+        expect(
+          dataWithMembers.members.map(({ pfama_id }) => pfama_id)
+        ).toContainEqual(x.text());
+      });
   });
 });

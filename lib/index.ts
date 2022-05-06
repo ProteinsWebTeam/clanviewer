@@ -51,6 +51,8 @@ type ClanNode = {
   x?: number;
   y?: number;
   link?: string;
+  short_name?: string;
+  type?: string;
 };
 type ClanLink = {
   source: number | string | ClanSimulationNode;
@@ -73,6 +75,11 @@ type PfamData = {
 };
 type ClanData = PfamData | ClanProcessedData;
 
+type NodeLabel =
+  | "name"
+  | "short_name"
+  | "accession"
+  | ((n: ClanNode) => string);
 export default class ClanViewer {
   r: number;
   _autoWidth: boolean;
@@ -97,6 +104,8 @@ export default class ClanViewer {
   nodeGroup: Selection<SVGGElement, unknown, null, undefined>;
   _ro?: ResizeObserver;
   tick?: () => void;
+  nodeLabel?: NodeLabel;
+  updatingLabels: boolean;
 
   constructor({
     element = "body",
@@ -106,6 +115,7 @@ export default class ClanViewer {
     r = 5,
     multiple_relationships = false,
     useCtrlToZoom = false,
+    nodeLabel,
   }: {
     element: string | HTMLElement;
     directional?: boolean;
@@ -114,6 +124,7 @@ export default class ClanViewer {
     r?: number;
     multiple_relationships?: boolean;
     useCtrlToZoom?: boolean;
+    nodeLabel?: NodeLabel;
   }) {
     this.r = r;
     this._autoWidth = !width;
@@ -124,6 +135,8 @@ export default class ClanViewer {
     this.multiple_relationships = multiple_relationships;
     this.directional = directional;
     this.useCtrlToZoom = useCtrlToZoom;
+    this.nodeLabel = nodeLabel;
+    this.updatingLabels = false;
 
     this.size = scaleLinear().range([1, 5 * this.r]);
 
@@ -221,6 +234,15 @@ export default class ClanViewer {
     }
   }
 
+  private getLabel(node: ClanNode) {
+    if (this.nodeLabel) {
+      if (typeof this.nodeLabel === "string")
+        return node[this.nodeLabel] || node.accession;
+      if (typeof this.nodeLabel === "function") return this.nodeLabel(node);
+    }
+    return node.accession;
+  }
+
   paint(data: ClanData) {
     const processedData = this.processData(data);
 
@@ -293,11 +315,11 @@ export default class ClanViewer {
       .attr("target", "_blank")
       .attr("class", (d) => (d["link"] ? "href" : null))
       .append("text")
-      .text((d) => d.accession);
+      .text((d) => this.getLabel(d));
     const label_node_text = nodeG
       .filter((d) => !d.link)
       .append("text")
-      .text((d) => d.accession);
+      .text((d) => this.getLabel(d));
 
     this.tick = () => {
       link.attr("d", ClanViewer.linkArc);
@@ -313,6 +335,10 @@ export default class ClanViewer {
       label_node_text
         .attr("x", (d) => (d.x || 0) + this.size(d.score) + 2)
         .attr("y", (d) => (d.y || 0) + this.r);
+      if (this.updatingLabels) {
+        label_node_link.text((d) => this.getLabel(d));
+        label_node_text.text((d) => this.getLabel(d));
+      }
     };
     this.force.on("tick", this.tick);
     this.force.alpha(1);
@@ -354,6 +380,14 @@ export default class ClanViewer {
     const py = ty > sy ? y + B * (mB / div) : y - B * (mB / div);
     return "translate(" + px + "," + py + ")";
   }
+  updateNodeLabel(nodeLabel?: NodeLabel) {
+    if (this.nodeLabel !== nodeLabel) {
+      this.updatingLabels = true;
+      this.nodeLabel = nodeLabel;
+      if (this.tick) this.tick();
+      this.updatingLabels = false;
+    }
+  }
   processData(data: ClanData): ClanProcessedData {
     const newData: ClanProcessedData = {
       nodes: [],
@@ -368,6 +402,7 @@ export default class ClanViewer {
     newData.nodes = members.map(
       (e) =>
         ({
+          ...e,
           id: (e as ClanNode).accession || (e as PfamMember).pfama_acc,
           accession: (e as ClanNode).accession || (e as PfamMember).pfama_acc,
           name: (e as ClanNode).name || (e as PfamMember).pfama_id,

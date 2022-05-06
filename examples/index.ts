@@ -17,4 +17,11 @@ if (rootDiv && rootDiv2) {
 
   const instance2 = new ClanViewer({ element: rootDiv2, directional: true });
   instance2.paint(data2);
+
+  const select = document.getElementById("nodeLabel");
+  select?.addEventListener("change", (evt) =>
+    instance2.updateNodeLabel(
+      (evt?.target as HTMLSelectElement)?.value as "accession" | "name"
+    )
+  );
 }
