@@ -24,4 +24,5 @@ jobs:
           path-to-lcov: "./coverage/lcov.info"
       - name: 🏗 - Build
         run: |
-          npm run build
+          npm run build -- --env dev
+          ls build
