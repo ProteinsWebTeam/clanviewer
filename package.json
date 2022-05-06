@@ -1,7 +1,7 @@
 {
   "name": "clanviewer",
   "description": "A component to visualise the relationships between the Pfam families in a clan",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/ProteinsWebTeam/clanviewer",
   "author": {
     "name": "gustavo-salazar",
